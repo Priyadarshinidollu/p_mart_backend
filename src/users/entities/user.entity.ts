@@ -1,9 +1,13 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Role } from '../../auth/roles.enum.js';
 
 @Entity({})
 export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @Column({ type: 'enum', enum: Role, default: Role.Customer })
+  role: Role;
 
   @Column()
   phone: string;

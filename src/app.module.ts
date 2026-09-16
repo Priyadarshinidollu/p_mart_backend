@@ -8,6 +8,11 @@ import configuration from './config/configuration.js';
 import { Graphql as NestGraphql} from './graphql/graphql.module.js';
 import { PgModule } from './database/postgres.module.js';
 import { AuthModule } from './auth/auth.module.js';
+import { CategoriesModule } from './categories/categories.module.js';
+import { ProductsModule } from './products/products.module.js';
+import { CartModule } from './cart/cart.module.js';
+import { OrdersModule } from './orders/orders.module.js';
+import { PaymentModule } from './payment/payment.module.js';
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
 @Module({
@@ -36,7 +41,13 @@ PgModule,
 
     UsersModule,
 
-    AuthModule
+    AuthModule,
+
+    CategoriesModule,
+    ProductsModule,
+    CartModule,
+    OrdersModule,
+    PaymentModule
   ],
   controllers: [AppController],
   providers: [AppService],

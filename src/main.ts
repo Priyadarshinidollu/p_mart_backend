@@ -6,6 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     cors:true,
     instrument: ObserveInstrument,
+    rawBody: true,
   });
   
    await app.listen(4000, '0.0.0.0');

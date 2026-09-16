@@ -10,5 +10,10 @@ export default () => ({
   appLogs:{
     appKey:process.env.APP_TELEMETRY_KEY,
     appSecret:process.env.APP_SECRET_KEY
+  },
+  stripe:{
+    secretKey:process.env.STRIPE_SECRET_KEY,
+    webhookSecret:process.env.STRIPE_WEBHOOK_SECRET,
+    currency:process.env.STRIPE_CURRENCY ?? 'usd'
   }
 });

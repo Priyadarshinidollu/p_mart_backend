@@ -8,7 +8,7 @@ import { GraphQLModule } from "@nestjs/graphql";
          
             driver: ApolloDriver,
             useFactory: () => ({
-        //  context: ({ req, res }) => ({ req, res }),
+         context: ({ req, res }: any) => ({ req, res }),
          autoSchemaFile: true,
             }),
     }),

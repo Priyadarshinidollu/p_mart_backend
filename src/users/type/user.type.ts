@@ -1,9 +1,14 @@
 import { InputType, Field, GraphQLISODateTime, ObjectType } from '@nestjs/graphql';
+import { Role } from '../../auth/roles.enum.js';
 
 @ObjectType()
 export class UserType {
  @Field()
   id: string;
+
+  @Field(() => Role)
+  role: Role;
+
   @Field()
   phone: string;
 
